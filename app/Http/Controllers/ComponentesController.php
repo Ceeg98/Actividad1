@@ -4,10 +4,11 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
+
 class ComponentesController extends Controller
 {
     public function consultar(){
-        return view('componentes')
+        return view('consultarComponente')
         ->with('componentes', array('Memoria RAM 16GB', 'Monitor', 'Tarjeta Gráfica'));
     }
 
@@ -23,4 +24,8 @@ class ComponentesController extends Controller
         return view('borrarComponentes');
     }
 
+    public function componente(){
+        return view('componente');
+    }
+    
 }

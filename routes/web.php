@@ -21,7 +21,6 @@ Route::get('/login', function () {
     return view('login');
 });
 
-Route::get('/componentes', 'App\Http\Controllers\ComponentesController@consultar');
+Route::get('/consultarComponente', 'App\Http\Controllers\ComponentesController@consultar');
 Route::get('/agregarComponentes', 'App\Http\Controllers\ComponentesController@agregar');
-Route::get('/actualizarComponentes', 'App\Http\Controllers\ComponentesController@actualizar');
-Route::get('/eliminarComponentes', 'App\Http\Controllers\ComponentesController@borrar');
+Route::get('/componente', 'App\Http\Controllers\ComponentesController@componente');

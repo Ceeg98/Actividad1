@@ -1,50 +1,66 @@
-<!DOCTYPE html>
-<html lang="en">
+@extends('layouts.master')
+@section('title', 'Agregar Componentes')
+@section('content')
 
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
-  <title>Agregar Componentes</title>
-</head>
 
-<body>
-  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-    <div class="container-fluid">
-      <a class="navbar-brand" href="/">COMPONENTES <svg xmlns="http://www.w3.org/2000/svg" width="19" height="19" fill="currentColor" class="bi bi-shop" viewBox="0 0 19 19">
-          <path d="M2.97 1.35A1 1 0 0 1 3.73 1h8.54a1 1 0 0 1 .76.35l2.609 3.044A1.5 1.5 0 0 1 16 5.37v.255a2.375 2.375 0 0 1-4.25 1.458A2.371 2.371 0 0 1 9.875 8 2.37 2.37 0 0 1 8 7.083 2.37 2.37 0 0 1 6.125 8a2.37 2.37 0 0 1-1.875-.917A2.375 2.375 0 0 1 0 5.625V5.37a1.5 1.5 0 0 1 .361-.976l2.61-3.045zm1.78 4.275a1.375 1.375 0 0 0 2.75 0 .5.5 0 0 1 1 0 1.375 1.375 0 0 0 2.75 0 .5.5 0 0 1 1 0 1.375 1.375 0 1 0 2.75 0V5.37a.5.5 0 0 0-.12-.325L12.27 2H3.73L1.12 5.045A.5.5 0 0 0 1 5.37v.255a1.375 1.375 0 0 0 2.75 0 .5.5 0 0 1 1 0zM1.5 8.5A.5.5 0 0 1 2 9v6h1v-5a1 1 0 0 1 1-1h3a1 1 0 0 1 1 1v5h6V9a.5.5 0 0 1 1 0v6h.5a.5.5 0 0 1 0 1H.5a.5.5 0 0 1 0-1H1V9a.5.5 0 0 1 .5-.5zM4 15h3v-5H4v5zm5-5a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v3a1 1 0 0 1-1 1h-2a1 1 0 0 1-1-1v-3zm3 0h-2v3h2v-3z" />
-        </svg></a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarText">
-        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-          <li class="nav-item">
-            <a class="nav-link active" aria-current="page" href="/agregarComponentes">Agregar componente</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="/componentes">Consultar componente</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="/eliminarComponentes">Eliminar componente</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="/actualizarComponentes">Actualizar componente</a>
-          </li>
-        </ul>
-        <ul class="navbar-nav me-0 mb-2 mb-lg-0">
-          <li class="nav-item">
-            <a class="nav-link" href="/login">Login</a>
-          </li>
-        </ul>
+<?php
+
+use Illuminate\Support\Str;
+
+$uniqid = Str::random(6);
+?>
+
+<div class="container-md">
+
+  <div class="row my-5 g-5 justify-content-around align-items-center">
+    <div class="col-6 col-lg-6 p-0" style="border-style: solid; border-color:#ECECEC; background-color:white">
+
+      <div class="text-center card-header bg-info" style="color:white;">
+        <h3>Agregar producto</h3>
       </div>
+      <div class="container py-3">
+        <div class="row">
+          <div class="card-body">
+            <form action="" method="">
+              <input type="hidden" name="uniqueCode" value="<?= $uniqid ?>">
+              <label for="nombreP">Nombre producto:</label>
+              <input type="text" name="nombreP" class="form-control">
+              <label>Categoria de Componente :</label>
+              <select class="form-select">
+                <option value="1">Tarjeta grafica</options>
+                <option value="2">Procesador</options>
+                <option value="3">Tarjeta Ram</options>
+                <option value="4">Memoria SSD</options>
+                <option value="5">Disco Duro</options>
+              </select>
+              <label>Elija la Sucursal: </label>
+              <select class="form-select">
+                <option value="1">Sucursal Viña del mar</options>
+                <option value="2">Sucursal Santiago Centro</options>
+                <option value="3">Sucursal Rancagua</options>
+              </select>
+              <label for="descripcion">Descripción :
+                <textarea class="form-control" name="descripción" cols="80" rows="5"></textarea></label>
+              <br>
+              <label for="cantidad">Cantidad :</label>
+              <input type="number" min="0" name="cantidad" class="form-control">
+              <label for="precio">Precio de venta :</label>
+              <input type="number" min="0" name="precio" class="form-control">
+              <br>
+              <div class="text-center">
+                <button type="submit" class="btn btn-primary">Registrar</button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+
     </div>
-  </nav>
-  
-  Agregar componente
 
-  
-</body>
+  </div>
+</div>
 
-</html>
+</div>
+
+
+@stop

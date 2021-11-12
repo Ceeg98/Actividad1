@@ -6,7 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
-  <title>Consultar componentes</title>
+  <title>Agregar Componentes</title>
 </head>
 
 <body>
@@ -21,10 +21,10 @@
       <div class="collapse navbar-collapse" id="navbarText">
         <ul class="navbar-nav me-auto mb-2 mb-lg-0">
           <li class="nav-item">
-            <a class="nav-link" href="/agregarComponentes">Agregar componente</a>
+            <a class="nav-link active" aria-current="page" href="/agregarComponentes">Agregar componente</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link active" aria-current="page" href="/componentes">Consultar componente</a>
+            <a class="nav-link" href="/componentes">Consultar componente</a>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="/eliminarComponentes">Eliminar componente</a>
@@ -41,12 +41,49 @@
       </div>
     </div>
   </nav>
-  
-  
-@foreach($componentes as $componente)
-<p>{{$componente}}</p>
-@endforeach
+  Agregue un componente
+  <div class="card-body">
+                    <form action="" method="">
+                       
 
+                        <div class="form-group">
+                            <label >nombre</label>
+                            <input type="text" name="quantity" class="form-control">
+                        </div>
+                        <div>
+                          <label>Categoria de Componente :</label>
+                          <br>
+                        <select>
+                          <option value="1">Tarjeta grafica</options>
+                          <option value="2">Procesador</options>
+                          <option value="3">Tarjeta Ram</options>
+                          <option value="4">Memoria SSD</options>
+                          <option value="5">Disco Duro</options>
+                          </select>                        
+                        </div> 
+                        <label>Elija la Sucursal: :</label>
+                          <br>
+                        <select>
+                          <option value="1">Sucursal Viña del mar</options>
+                          <option value="2">Sucursal Santiago Centro</options>
+                          <option value="3">Tarjeta Ram</options>
+                        
+                          </select>                        
+                        </div>
+
+                        <div class="form-group">
+                            <label >descripcion :</label>
+                            <input type="text" name="quantity" class="form-control">
+                       
+                        <div class="form-group">
+                            <label >Cantidad :</label>
+                            <input type="number" name="quantity" class="form-control">
+                      </div>
+                        <div class="form-group">
+                            <label >precio de venta :</label>
+                            <input type="number" name="quantity" class="form-control">
+                        </div>
+                   </form>
   
 </body>
 
