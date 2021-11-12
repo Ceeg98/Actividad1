@@ -9,7 +9,7 @@ class ComponentesController extends Controller
 {
     public function consultar(){
         return view('consultarComponente')
-        ->with('componentes', array('Memoria RAM 16GB', 'Monitor', 'Tarjeta Gráfica'));
+        ->with('componentes', array('GTX 1650-ti Super-Q 8gb', 'RTX 2060 12gb pulse'));
     }
 
     public function agregar(){

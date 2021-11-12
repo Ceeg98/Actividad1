@@ -13,7 +13,8 @@
     }
 
     .codigo,
-    .administrar {
+    .administrar,
+    .precio {
         width: 10%;
     }
 
@@ -40,6 +41,7 @@
                     <tr>
                         <th class="codigo">Codigo</th>
                         <th>Nombre</th>
+                        <th class="precio">Precio</th>
                         <th class="cantidad">Cantidad</th>
                         <th class="administrar">Administrar</th>
                     </tr>
@@ -48,6 +50,7 @@
                     <tr>
                         <td>Vc3M6e</td>
                         <td>GTX 1650-ti Super-Q 8gb</td>
+                        <td>$777.777</td>
                         <td>
                             <a class="btn btn-secondary dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false">
                                 Disponibles: 10
@@ -70,6 +73,7 @@
                     <tr>
                         <td>9Pkl32</td>
                         <td>RTX 2060 12gb pulse</td>
+                        <td>$999.999</td>
                         <td>
                             <a class="btn btn-secondary dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false">
                                 Disponibles: 3
